@@ -40,6 +40,8 @@ Task-Manager-Tool/
 │
 ├── frontend/
 ├── backend/
+│   ├── .env.example
+│   └── start.bat
 ├── package.json
 └── README.md
 ```
@@ -57,20 +59,52 @@ git clone https://github.com/Rushi-tech11/Task--Manager--Tool.git
 ### Install Dependencies
 
 ```bash
+cd backend
 npm install
+```
+
+### Configure Environment
+
+Create your backend environment file:
+
+```bash
+cd backend
+copy .env.example .env
+```
+
+If you are on macOS or Linux, use:
+
+```bash
+cp .env.example .env
+```
+
+Update the values in `.env` (especially `MONGO_URI`).
+
+### Run Backend
+
+From the backend folder:
+
+```bash
+npm start
+```
+
+If your PowerShell blocks npm scripts, use:
+
+```powershell
+npm.cmd start
+```
+
+Or run the included Windows launcher:
+
+```powershell
+start.bat
 ```
 
 ### Run Frontend
 
 ```bash
 cd frontend
-npm start
-```
-
-### Run Backend
-
-```bash
-cd backend
+npm install
 npm run dev
 ```
 

@@ -13,8 +13,14 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// DB connect
-connectDB();
+// DB connect only when a MongoDB URI is configured
+if (process.env.MONGO_URI) {
+  connectDB();
+} else {
+  console.warn(
+    "MONGO_URI is not set. Starting without DB connection; set it in backend/.env to enable database-backed routes."
+  );
+}
 
 //Routes
 app.use("/api/user", userRouter);
