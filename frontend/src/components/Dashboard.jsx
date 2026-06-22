@@ -54,7 +54,7 @@ const Dashboard = () => {
     [tasks],
   );
 
-  //filter tasks
+  //filter tasks 2
   const filteredTasks = useMemo(
     () =>
       tasks.filter((task) => {
